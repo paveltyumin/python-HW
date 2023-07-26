@@ -1,0 +1,24 @@
+def min_flips(coins):
+    # Инициализируем счетчики для решек и гербов
+    heads_count = 0
+    tails_count = 0
+
+    # Подсчитываем количество решек и гербов
+    for coin in coins:
+        if coin == "H":
+            heads_count += 1
+        elif coin == "T":
+            tails_count += 1
+
+    # Возвращаем минимальное количество монет, которые нужно перевернуть
+    return min(heads_count, tails_count)
+
+# Вводим строку с описанием положения монеток (например, "HHTHHT")
+coins_str = input("Введите последовательность монеток (например, 'HHTHHT'): ")
+
+# Преобразуем строку в список монеток
+coins_list = list(coins_str)
+
+# Вычисляем и выводим результат
+flips_needed = min_flips(coins_list)
+print("Минимальное количество монет, которые нужно перевернуть:", flips_needed)
